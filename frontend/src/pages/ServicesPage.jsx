@@ -61,7 +61,7 @@ export default function ServicesPage() {
       {/* Services In-Depth List */}
       <section className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
         <div className="container">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem' }}>
+          <div className="services-list-container">
             {servicesData.map((service, index) => {
               const icon = iconMap[service.icon] || <FaLaptopCode />;
               const isEven = index % 2 === 1;
@@ -75,43 +75,29 @@ export default function ServicesPage() {
                   <div className="service-detail-grid">
                     {/* Left Column: Details */}
                     <div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem' }}>
-                        <div
-                          style={{
-                            width: '52px',
-                            height: '52px',
-                            borderRadius: '12px',
-                            background: 'rgba(245, 158, 11, 0.15)',
-                            color: 'var(--primary)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            fontSize: '1.6rem',
-                            border: '1px solid rgba(245, 158, 11, 0.3)',
-                            flexShrink: 0
-                          }}
-                        >
+                      <div className="service-header-row">
+                        <div className="service-header-icon-box">
                           {icon}
                         </div>
-                        <div>
+                        <div className="service-header-text">
                           <span className="badge-pill badge-amber" style={{ fontSize: '0.75rem', padding: '0.2rem 0.6rem' }}>
                             Service 0{index + 1}
                           </span>
-                          <h2 style={{ fontSize: 'clamp(1.4rem, 3.5vw, 1.85rem)', color: '#FFFFFF', marginTop: '0.2rem' }}>
+                          <h2 className="service-detail-title">
                             {service.title}
                           </h2>
                         </div>
                       </div>
 
-                      <p style={{ fontSize: '1.02rem', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
+                      <p className="service-detail-desc">
                         {service.fullDesc}
                       </p>
 
-                      <div style={{ marginBottom: '1.75rem' }}>
+                      <div style={{ marginBottom: '1.5rem' }}>
                         <strong style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.6rem' }}>
                           Ideal For:
                         </strong>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                        <div className="service-ideal-tags">
                           {service.idealFor.map((client, idx) => (
                             <span key={idx} className="tech-pill" style={{ background: 'rgba(16, 185, 129, 0.1)', borderColor: 'rgba(16, 185, 129, 0.3)', color: '#34D399' }}>
                               {client}
@@ -120,7 +106,7 @@ export default function ServicesPage() {
                         </div>
                       </div>
 
-                      <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                      <div className="service-action-wrap">
                         <Button
                           to="/contact"
                           state={{ prefillProjectType: service.title }}
@@ -128,28 +114,21 @@ export default function ServicesPage() {
                           size="md"
                           iconRight={<BsArrowRight />}
                         >
-                          Build {service.title} With Us
+                          Start {service.title} Project
                         </Button>
                       </div>
                     </div>
 
                     {/* Right Column: Deliverables Card */}
-                    <div
-                      style={{
-                        background: '#0A0F1D',
-                        border: '1px solid rgba(255, 255, 255, 0.08)',
-                        borderRadius: 'var(--radius-md)',
-                        padding: '1.75rem 1.25rem',
-                      }}
-                    >
-                      <h4 style={{ color: '#FFFFFF', fontSize: '1.15rem', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <BsCheck2Circle style={{ color: 'var(--secondary)' }} />
+                    <div className="service-deliverables-card">
+                      <h4 className="service-deliverables-title">
+                        <BsCheck2Circle style={{ color: 'var(--secondary)', flexShrink: 0 }} />
                         <span>Included Deliverables</span>
                       </h4>
 
-                      <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.85rem', marginBottom: '1.5rem' }}>
+                      <ul className="service-deliverables-list">
                         {service.deliverables.map((item, idx) => (
-                          <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem', fontSize: '0.925rem', color: 'var(--text-secondary)' }}>
+                          <li key={idx} className="service-deliverable-item">
                             <BsCheck2 style={{ color: 'var(--secondary)', fontSize: '1.1rem', marginTop: '3px', flexShrink: 0 }} />
                             <span>{item}</span>
                           </li>
@@ -157,10 +136,10 @@ export default function ServicesPage() {
                       </ul>
 
                       <div style={{ paddingTop: '1.25rem', borderTop: '1px solid var(--border-subtle)' }}>
-                        <span style={{ fontSize: '0.8rem', color: 'var(--text-subtle)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.4rem' }}>
+                        <span style={{ fontSize: '0.8rem', color: 'var(--text-subtle)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.5rem' }}>
                           Technology Implementation:
                         </span>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                        <div className="service-tech-tags">
                           {service.technologies.map((t, idx) => (
                             <span key={idx} className="tech-pill">
                               {t}
