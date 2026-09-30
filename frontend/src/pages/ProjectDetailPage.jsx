@@ -245,7 +245,7 @@ export default function ProjectDetailPage() {
                   Business Impact
                 </h3>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+                <div className="impact-metrics-grid">
                   {project.results.map((res, idx) => (
                     <div key={idx} style={{ padding: '1rem', background: 'rgba(255, 255, 255, 0.03)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)', textAlign: 'center' }}>
                       <div className="gradient-text-amber" style={{ fontSize: '1.8rem', fontWeight: 800, fontFamily: 'var(--font-heading)' }}>

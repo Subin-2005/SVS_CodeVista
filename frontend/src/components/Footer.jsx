@@ -8,20 +8,7 @@ export default function Footer() {
     <footer className="footer-wrapper">
       <div className="container">
         {/* Top mini-CTA Card */}
-        <div
-          className="glass-card"
-          style={{
-            padding: '2.5rem',
-            marginBottom: '4rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '1.5rem',
-            background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(15, 23, 42, 0.8))',
-            borderColor: 'rgba(245, 158, 11, 0.3)',
-          }}
-        >
+        <div className="glass-card footer-top-card">
           <div>
             <span className="badge-pill badge-amber" style={{ marginBottom: '0.75rem' }}>
               <span className="pulse-dot pulse-dot-amber"></span> Next Step

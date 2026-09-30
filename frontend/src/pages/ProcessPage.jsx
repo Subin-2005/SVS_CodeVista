@@ -42,28 +42,16 @@ export default function ProcessPage() {
             {processData.map((step, index) => (
               <div
                 key={step.step}
-                className="glass-card"
-                style={{
-                  padding: '3rem 2.5rem',
-                  borderRadius: 'var(--radius-lg)',
-                  borderColor: 'rgba(255, 255, 255, 0.1)',
-                }}
+                className="glass-card process-detail-card"
               >
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                    gap: '2.5rem',
-                    alignItems: 'center'
-                  }}
-                >
+                <div className="process-detail-grid">
                   {/* Left Column */}
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                       <span
                         className="gradient-text-amber"
                         style={{
-                          fontSize: '2.8rem',
+                          fontSize: 'clamp(2.2rem, 5vw, 2.8rem)',
                           fontWeight: 900,
                           fontFamily: 'var(--font-mono)',
                           lineHeight: 1
@@ -75,17 +63,17 @@ export default function ProcessPage() {
                         <span className="badge-pill badge-amber" style={{ fontSize: '0.72rem', padding: '0.2rem 0.6rem' }}>
                           Phase {step.step}
                         </span>
-                        <h2 style={{ fontSize: '2rem', color: '#FFFFFF', marginTop: '0.2rem' }}>
+                        <h2 style={{ fontSize: 'clamp(1.4rem, 3.5vw, 2rem)', color: '#FFFFFF', marginTop: '0.2rem' }}>
                           {step.title}
                         </h2>
                       </div>
                     </div>
 
-                    <div style={{ fontSize: '1.05rem', color: 'var(--secondary)', fontWeight: 600, marginBottom: '1rem' }}>
+                    <div style={{ fontSize: '1.02rem', color: 'var(--secondary)', fontWeight: 600, marginBottom: '1rem' }}>
                       "{step.tagline}"
                     </div>
 
-                    <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
+                    <p style={{ fontSize: '0.98rem', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
                       {step.description}
                     </p>
                   </div>
@@ -96,7 +84,7 @@ export default function ProcessPage() {
                       background: '#0A0F1D',
                       border: '1px solid rgba(255, 255, 255, 0.08)',
                       borderRadius: 'var(--radius-md)',
-                      padding: '2rem',
+                      padding: '1.75rem 1.25rem',
                     }}
                   >
                     <h4 style={{ color: '#FFFFFF', fontSize: '1.1rem', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>

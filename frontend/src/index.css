@@ -135,15 +135,43 @@ img {
   padding-right: 1.5rem;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .section-padding {
   padding-top: 6.5rem;
   padding-bottom: 6.5rem;
 }
 
+@media (max-width: 992px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .section-padding {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 
@@ -467,8 +495,29 @@ img {
 }
 
 /* Form Styles */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
 .form-group {
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.35rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .form-group {
+    margin-bottom: 1.15rem;
+  }
 }
 
 .form-label {
@@ -491,14 +540,27 @@ img {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
-  font-size: 0.95rem;
+  font-size: 1rem; /* 16px avoids iOS automatic zoom-in */
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
   outline: none;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .form-control {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
 }
 
 .form-control:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+.form-control.is-invalid {
+  border-color: #EF4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
 }
 
 .form-control::placeholder {
@@ -513,6 +575,8 @@ select.form-control {
   background-size: 1rem;
   padding-right: 2.5rem;
   appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 textarea.form-control {
@@ -525,6 +589,7 @@ textarea.form-control {
   font-size: 0.825rem;
   margin-top: 0.35rem;
   display: block;
+  line-height: 1.4;
 }
 
 /* Notification & Alerts */

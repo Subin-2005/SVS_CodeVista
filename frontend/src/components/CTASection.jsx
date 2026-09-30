@@ -22,7 +22,7 @@ export default function CTASection({
             <p className="cta-banner-text">
               {text}
             </p>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+            <div className="cta-banner-actions">
               <Button
                 to="/contact"
                 variant="primary"

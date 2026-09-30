@@ -42,7 +42,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* Category Filter Pills */}
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.75rem', marginTop: '1.5rem' }}>
+          <div className="category-filter-bar">
             {categories.map((cat) => (
               <button
                 key={cat}

@@ -185,18 +185,10 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '3.5rem',
-              alignItems: 'flex-start',
-              marginTop: '2rem'
-            }}
-          >
+          <div className="contact-layout-grid">
             {/* Left Column: Direct Contact Details & Trust */}
             <div>
-              <div className="glass-card" style={{ padding: '2.5rem', marginBottom: '2rem', borderColor: 'rgba(245, 158, 11, 0.3)' }}>
+              <div className="glass-card contact-info-card">
                 <span className="badge-pill badge-amber" style={{ marginBottom: '1.25rem' }}>
                   <span className="pulse-dot pulse-dot-amber"></span> Direct Channels
                 </span>
@@ -209,31 +201,31 @@ export default function ContactPage() {
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(245, 158, 11, 0.15)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>
+                  <div className="contact-channel-item">
+                    <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(245, 158, 11, 0.15)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', flexShrink: 0 }}>
                       <BsEnvelope />
                     </div>
-                    <div>
+                    <div style={{ minWidth: 0 }}>
                       <span style={{ fontSize: '0.8rem', color: 'var(--text-subtle)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Email Us</span>
-                      <strong style={{ display: 'block', color: '#FFFFFF', fontSize: '0.95rem' }}>svscodevista@gmail.com</strong>
+                      <strong style={{ display: 'block', color: '#FFFFFF', fontSize: '0.95rem', wordBreak: 'break-all' }}>svscodevista@gmail.com</strong>
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(16, 185, 129, 0.15)', color: 'var(--secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>
+                  <div className="contact-channel-item">
+                    <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(16, 185, 129, 0.15)', color: 'var(--secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', flexShrink: 0 }}>
                       <BsTelephone />
                     </div>
-                    <div>
+                    <div style={{ minWidth: 0 }}>
                       <span style={{ fontSize: '0.8rem', color: 'var(--text-subtle)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Call / WhatsApp</span>
                       <strong style={{ display: 'block', color: '#FFFFFF', fontSize: '0.95rem' }}>+91 8122715090</strong>
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(96, 165, 250, 0.15)', color: '#60A5FA', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>
+                  <div className="contact-channel-item">
+                    <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(96, 165, 250, 0.15)', color: '#60A5FA', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', flexShrink: 0 }}>
                       <BsClockHistory />
                     </div>
-                    <div>
+                    <div style={{ minWidth: 0 }}>
                       <span style={{ fontSize: '0.8rem', color: 'var(--text-subtle)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Response SLA</span>
                       <strong style={{ display: 'block', color: '#FFFFFF', fontSize: '0.95rem' }}>Within 24 Hours Guaranteed</strong>
                     </div>
@@ -242,9 +234,9 @@ export default function ContactPage() {
               </div>
 
               {/* Security & Confidentiality Box */}
-              <div className="glass-card" style={{ padding: '2rem' }}>
+              <div className="glass-card" style={{ padding: '1.75rem 1.5rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
-                  <BsShieldCheck style={{ color: 'var(--secondary)', fontSize: '1.4rem' }} />
+                  <BsShieldCheck style={{ color: 'var(--secondary)', fontSize: '1.4rem', flexShrink: 0 }} />
                   <h4 style={{ color: '#FFFFFF', fontSize: '1.1rem' }}>Strict Confidentiality & NDA</h4>
                 </div>
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.6' }}>
@@ -255,7 +247,7 @@ export default function ContactPage() {
 
             {/* Right Column: Interactive Contact Form */}
             <div>
-              <div className="glass-card" style={{ padding: '2.5rem', background: '#0D1322', borderColor: 'rgba(255, 255, 255, 0.12)' }}>
+              <div className="glass-card contact-form-card">
                 {successResponse ? (
                   /* Success Screen */
                   <div className="animate-fade-in" style={{ textAlign: 'center', padding: '1.5rem 0' }}>
@@ -283,7 +275,7 @@ export default function ContactPage() {
                 ) : (
                   /* Form */
                   <form onSubmit={handleSubmit} noValidate>
-                    <div style={{ marginBottom: '1.75rem' }}>
+                    <div style={{ marginBottom: '1.5rem' }}>
                       <h3 style={{ fontSize: '1.45rem', color: '#FFFFFF', marginBottom: '0.35rem' }}>
                         Project Details & Requirements
                       </h3>
@@ -299,7 +291,8 @@ export default function ContactPage() {
                       </div>
                     )}
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                    {/* Row 1: Name and Email (Stacked line-by-line on mobile) */}
+                    <div className="form-row">
                       {/* Full Name */}
                       <div className="form-group">
                         <label className="form-label" htmlFor="full_name">
@@ -337,7 +330,8 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                    {/* Row 2: Phone and Company (Stacked line-by-line on mobile) */}
+                    <div className="form-row">
                       {/* Phone Number */}
                       <div className="form-group">
                         <label className="form-label" htmlFor="phone">
@@ -373,7 +367,8 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                    {/* Row 3: Project Type and Budget (Stacked line-by-line on mobile) */}
+                    <div className="form-row">
                       {/* Project Type Dropdown */}
                       <div className="form-group">
                         <label className="form-label" htmlFor="project_type">

@@ -33,12 +33,12 @@ export default function AboutPage() {
       {/* Who We Are & What We Do */}
       <section className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+          <div className="about-hero-grid">
             <div>
               <span className="badge-pill badge-amber" style={{ marginBottom: '1rem' }}>
                 <span className="pulse-dot pulse-dot-amber"></span> Who We Are
               </span>
-              <h2 style={{ fontSize: '2.2rem', marginBottom: '1.25rem', color: '#FFFFFF' }}>
+              <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.2rem)', marginBottom: '1.25rem', color: '#FFFFFF' }}>
                 Engineers Who Understand Business Objectives
               </h2>
               <p style={{ marginBottom: '1.25rem' }}>
@@ -65,7 +65,7 @@ export default function AboutPage() {
             </div>
 
             {/* Visual Box */}
-            <div className="glass-card" style={{ padding: '2.5rem', background: '#0D1424', borderColor: 'rgba(245, 158, 11, 0.3)' }}>
+            <div className="glass-card" style={{ padding: '2rem 1.5rem', background: '#0D1424', borderColor: 'rgba(245, 158, 11, 0.3)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
                 <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(245, 158, 11, 0.2)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <BsTerminal style={{ fontSize: '1.4rem' }} />
@@ -98,24 +98,14 @@ export default function AboutPage() {
       {/* Our Mission */}
       <section className="section-padding">
         <div className="container">
-          <div
-            className="glass-card"
-            style={{
-              padding: '3.5rem 2.5rem',
-              textAlign: 'center',
-              maxWidth: '900px',
-              margin: '0 auto',
-              background: 'radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.1) 0%, rgba(13, 19, 34, 0.95) 80%)',
-              borderColor: 'rgba(245, 158, 11, 0.35)'
-            }}
-          >
+          <div className="glass-card about-mission-card">
             <span className="badge-pill badge-emerald" style={{ marginBottom: '1.25rem' }}>
               <span className="pulse-dot pulse-dot-emerald"></span> Our Mission
             </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', color: '#FFFFFF', marginBottom: '1.25rem', lineHeight: '1.3' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.5rem)', color: '#FFFFFF', marginBottom: '1.25rem', lineHeight: '1.3' }}>
               "To help businesses use technology to solve real problems, improve operations, and create better digital experiences."
             </h2>
-            <p style={{ maxWidth: '680px', margin: '0 auto', fontSize: '1.1rem', color: 'var(--text-muted)' }}>
+            <p style={{ maxWidth: '680px', margin: '0 auto', fontSize: 'clamp(0.95rem, 2vw, 1.1rem)', color: 'var(--text-muted)' }}>
               We measure our success by the stability, reliability, and business impact of the software we launch for our clients.
             </p>
           </div>

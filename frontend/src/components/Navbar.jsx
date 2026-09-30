@@ -17,10 +17,21 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
+  // Close mobile menu on route change & toggle body scroll lock
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
 
   const navLinks = [
     { label: 'Home', path: '/' },
@@ -37,7 +48,7 @@ export default function Navbar() {
         <div className="container" style={{ height: '100%' }}>
           <div className="navbar-inner">
             {/* Brand Logo */}
-            <Link to="/" className="brand-logo" aria-label="SVS CodeVista Home">
+            <Link to="/" className="brand-logo" aria-label="SVS CodeVista Home" onClick={() => setMobileMenuOpen(false)}>
               <div className="brand-logo-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M7 8L3 12L7 16" stroke="#F59E0B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -106,6 +117,7 @@ export default function Navbar() {
                   `mobile-nav-link ${isActive ? 'active' : ''}`
                 }
                 end={link.path === '/'}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <span>{link.label}</span>
                 <BsArrowRight style={{ opacity: 0.5 }} />
@@ -119,6 +131,7 @@ export default function Navbar() {
           size="lg"
           style={{ width: '100%' }}
           iconRight={<BsArrowRight />}
+          onClick={() => setMobileMenuOpen(false)}
         >
           Let's Build Together
         </Button>

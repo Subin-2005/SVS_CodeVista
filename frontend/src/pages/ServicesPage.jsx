@@ -70,22 +70,9 @@ export default function ServicesPage() {
                 <div
                   id={service.slug}
                   key={service.id}
-                  className="glass-card"
-                  style={{
-                    padding: '3rem 2.5rem',
-                    borderRadius: 'var(--radius-lg)',
-                    borderColor: 'rgba(255, 255, 255, 0.1)',
-                    scrollMarginTop: '100px'
-                  }}
+                  className="glass-card service-detail-card"
                 >
-                  <div
-                    style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                      gap: '3rem',
-                      alignItems: 'center'
-                    }}
-                  >
+                  <div className="service-detail-grid">
                     {/* Left Column: Details */}
                     <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem' }}>
@@ -100,7 +87,8 @@ export default function ServicesPage() {
                             alignItems: 'center',
                             justifyContent: 'center',
                             fontSize: '1.6rem',
-                            border: '1px solid rgba(245, 158, 11, 0.3)'
+                            border: '1px solid rgba(245, 158, 11, 0.3)',
+                            flexShrink: 0
                           }}
                         >
                           {icon}
@@ -109,13 +97,13 @@ export default function ServicesPage() {
                           <span className="badge-pill badge-amber" style={{ fontSize: '0.75rem', padding: '0.2rem 0.6rem' }}>
                             Service 0{index + 1}
                           </span>
-                          <h2 style={{ fontSize: '1.85rem', color: '#FFFFFF', marginTop: '0.2rem' }}>
+                          <h2 style={{ fontSize: 'clamp(1.4rem, 3.5vw, 1.85rem)', color: '#FFFFFF', marginTop: '0.2rem' }}>
                             {service.title}
                           </h2>
                         </div>
                       </div>
 
-                      <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
+                      <p style={{ fontSize: '1.02rem', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
                         {service.fullDesc}
                       </p>
 
@@ -151,7 +139,7 @@ export default function ServicesPage() {
                         background: '#0A0F1D',
                         border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: 'var(--radius-md)',
-                        padding: '2rem',
+                        padding: '1.75rem 1.25rem',
                       }}
                     >
                       <h4 style={{ color: '#FFFFFF', fontSize: '1.15rem', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
